@@ -3,6 +3,7 @@ package de.lubowiecki.ocp.basics.things;
 // jede Klasse erbt in Java automatisch von der Klasse Object...
 public class Thing {
 	
+	// alle Objekte von Thing nutzen die gleiche count Variable
 	private static int count = 0;
 	
 	private int id;
@@ -27,6 +28,7 @@ public class Thing {
 	// hashCode - Liefert eine Identifikationszahl
 	// equals - Vergleicht den Inhalt der Objekte
 	// clone - Kopiert ein Objekt
+	// getClass - Liefert ein Reflection-Objekt
 	// wait, notify, notifyAll - Werden für Threads verwendet
 	
 	public String getName() {

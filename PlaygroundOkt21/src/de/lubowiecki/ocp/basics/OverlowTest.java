@@ -24,14 +24,14 @@ public class OverlowTest {
 		byte i = 125;
 		i++; // i = (byte)(i + 1)
 		i++;
-		//i++;
-		//i = i + 1;
+		i++; // Überlauf
+		//i = i + 1; // Error: Addition führt zu Promotion auf int
 		System.out.println(i);
 		
-		String s = "Hallo String";
-		
+		// Muss importiert werden, da es nicht in java.lang oder gleichen Paket liegt
 		LocalDate d = LocalDate.now();
 		
+		// Zugriff auf Programmparameter
 		System.out.println(args[0]);
 		System.out.println(args[2]);
 		
