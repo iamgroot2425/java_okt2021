@@ -33,6 +33,30 @@ public class ArrayTest {
 		//int a, b[], c;
 		int[] a, b[], c;
 		
+		
+		System.out.println();
+
+		
+		int[][] arr1 = new int[3][5];
+		
+		int[][] arr2 = new int[3][];
+		arr2[0] = new int[3];
+		arr2[1] = new int[6];
+		arr2[2] = new int[2];
+		
+		
+		int[][] arr3 = {{2,5,8},{1,0},{7,18,22,19,0}};
+		
+		for (int[] subArr : arr3) {
+			for (int wert : subArr) {
+				System.out.print(wert + " ");
+			}
+			System.out.println();
+		}
+		
+		arr3[2][2] = 9;
+		System.out.println(arr3[1][2]);
+		
 	}
 
 }
