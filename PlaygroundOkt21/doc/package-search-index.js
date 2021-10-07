@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.lubowiecki.aufgaben.uebung3"},{"l":"de.lubowiecki.ocp.basics"},{"l":"de.lubowiecki.ocp.basics.things"},{"l":"de.lubowiecki.ocp.designpatterns.singleton"},{"l":"de.lubowiecki.ocp.taschenrechner"}];updateSearchResults();
