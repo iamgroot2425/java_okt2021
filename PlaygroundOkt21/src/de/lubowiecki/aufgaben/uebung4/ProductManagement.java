@@ -22,6 +22,9 @@ public class ProductManagement {
 	
 	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
 	
+	// TODO: Prüfen, warum nach der Eingabe des Namens noch mal auf Eigabe gewartet wird
+	
+	
 	public static void main(String[] args) {
 		new ProductManagement().init();
 	}
@@ -67,41 +70,121 @@ public class ProductManagement {
 	// Produkterzeugung
 	private boolean createProduct() {
 		
+		try {
+			
+			System.out.print("Ist es verderblich? [j/n]:");
+			boolean verderblich = scanner.next().trim().toLowerCase().equals("j"); 
+			
+			Product p = null;
+			
+			if(verderblich) {
+				p = new PerishableProduct();
+			}
+			else {
+				p = new Product();
+			}
+			
+			scanner.nextLine(); // FIX
+			System.out.print("Produktname: ");
+			p.setName(scanner.nextLine()); 
+			
+			while(!inputWeight(p)) {
+				System.out.println("Falsche Eingabe!");
+			}
+			
+			while(!inputCount(p)) {
+				System.out.println("Falsche Eingabe!");
+			}
+			
+			while(!inputPrice(p)) {
+				System.out.println("Falsche Eingabe!");
+			}
+			
+			if(verderblich) {
+				// p ist ein PerishableProduct auf dem Heap aber die Referenz ist ein normales Produkt
+				// um an die setExpiryDate zu kommen, muss man die Referenz auf PerishableProduct casten
+				while(!inputExpiryDate((PerishableProduct) p)) {
+					System.out.println("Falsche Eingabe!");
+				}
+			}
+			
+			scanner.nextLine(); // FIX
+			
+			return products.add(p);
+		}
+		catch(RuntimeException e) {
+			System.out.println("Produkt konnte nicht erzeugt werden, da die Eingaben ungültig sind.");
+			return false;
+		}
+	}
+	
+	private boolean inputCount(Product p) {
+		
 		scanner.nextLine(); // FIX
 		
-		System.out.print("Produktname: ");
-		String name = scanner.nextLine(); 
-		
-		System.out.print("Gewicht: ");
-		double gewicht = scanner.nextDouble();
-		
 		System.out.print("Menge: ");
-		int menge = scanner.nextInt();
+		try {
+			int zahl = scanner.nextInt();
+			if(zahl > 0) {
+				p.setCount(zahl);
+				return true;
+			}
+			return false;
+		}
+		catch(RuntimeException e) {
+			return false;
+		}
+	}
+	
+	private boolean inputPrice(Product p) {
+		
+		scanner.nextLine(); // FIX
 		
 		System.out.print("Preis: ");
-		double preis = scanner.nextDouble();
+		try {
+			double zahl = scanner.nextDouble();
+			if(zahl > 0) {
+				p.setPrice(zahl);
+				return true;
+			}
+			return false;
+		}
+		catch(RuntimeException e) {
+			return false;
+		}
+	}
+	
+	private boolean inputExpiryDate(PerishableProduct p) {
 		
-		System.out.print("Ist es verderblich? [j/n]:");
+		scanner.nextLine(); // FIX
 		
-		boolean verderblich = scanner.next().trim().toLowerCase().equals("j"); 
-		
-		if(verderblich) {
-			System.out.print("Datum [TT.MM.JJ]: ");
+		System.out.print("Datum [TT.MM.JJ]: ");
+		try {
 			String datum = scanner.next();
 			LocalDate expiryDate = LocalDate.parse(datum, FORMATTER);
-			
-//			System.out.print("Tag: ");
-//			int tag = scanner.nextInt();
-//			System.out.print("Monat: ");
-//			int monat = scanner.nextInt();
-//			System.out.print("Jahr: ");
-//			int jahr = scanner.nextInt();
-//			LocalDate expirDate = LocalDate.of(jahr, monat, tag);
-			
-			return products.add(new PerishableProduct(name, gewicht, menge, preis, expiryDate));
+			p.setExpiryDate(expiryDate);
+			return true;
 		}
-		else {
-			return products.add(new Product(name, gewicht, menge, preis));
+		catch(RuntimeException e) {
+			return false;
+		}
+	}
+	
+	private boolean inputWeight(Product p) {
+		
+		scanner.nextLine(); // FIX
+		
+		System.out.print("Gewicht: ");
+		try {
+			double zahl = scanner.nextDouble();
+			if(zahl > 0) {
+				p.setWeight(zahl);
+				return true;
+			}
+			return false;
+		}
+		catch(RuntimeException e) {
+			return false;
 		}
 	}
 

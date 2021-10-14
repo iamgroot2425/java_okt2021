@@ -13,6 +13,9 @@ public class Product implements Serializable {
 	private int count;
 	private double price;
 	
+	public Product() {
+	}
+	
 	public Product(String name, double weight, int count, double price) {
 		this.name = name;
 		this.weight = weight;
