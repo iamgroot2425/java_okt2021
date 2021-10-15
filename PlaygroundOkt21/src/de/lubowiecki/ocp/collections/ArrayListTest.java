@@ -1,4 +1,4 @@
-package de.lubowiecki.ocp.basics.collections;
+package de.lubowiecki.ocp.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
