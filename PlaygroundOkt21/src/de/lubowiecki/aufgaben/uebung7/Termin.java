@@ -1,5 +1,6 @@
 package de.lubowiecki.aufgaben.uebung7;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -17,6 +18,10 @@ public class Termin implements Comparable<Termin> {
 	
 	public Termin() {
 	}
+	
+	public Termin(String title, String description) {
+		this(LocalDateTime.now(), title, description);
+	}	
 	
 	public Termin(LocalDateTime date, String title, String description) {
 		this.date = date;
