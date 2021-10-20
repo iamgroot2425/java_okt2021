@@ -12,6 +12,8 @@ public final class DatabaseUtils {
 	private static final String DB_USER = "root";
 	private static final String DB_PASSWORD = "root";
 	
+	public static final boolean DEBUG_MODE = false;
+	
 	private static final String URL = String.format("jdbc:mysql://%s:%d/%s?serverTimezone=UTC&useSSL=false", HOST, PORT, DB_NAME);
 	
 	private DatabaseUtils() {
