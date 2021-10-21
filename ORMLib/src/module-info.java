@@ -1,4 +1,4 @@
-module de.lubowiecki.orm {
+module ormlib {
 	
 	requires java.sql;
 	
