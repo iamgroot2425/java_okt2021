@@ -1,4 +1,4 @@
-package de.lubowiecki.ocp.jdbc;
+package de.lubowiecki.orm;
 
 import java.sql.SQLException;
 import java.util.List;

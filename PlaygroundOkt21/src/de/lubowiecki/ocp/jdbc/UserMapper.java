@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import de.lubowiecki.orm.AbstractMapper;
+import de.lubowiecki.orm.DatabaseUtils;
+
 public class UserMapper extends AbstractMapper<User> {
 
 	public UserMapper() {

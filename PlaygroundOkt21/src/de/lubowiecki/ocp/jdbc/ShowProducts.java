@@ -2,6 +2,8 @@ package de.lubowiecki.ocp.jdbc;
 
 import java.sql.SQLException;
 
+import de.lubowiecki.orm.Mapper;
+
 public class ShowProducts {
 
 	public static void main(String[] args) {

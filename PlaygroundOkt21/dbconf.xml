@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="password">root</entry>
+<entry key="debug">false</entry>
+<entry key="db_name">jdbc_test</entry>
+<entry key="port">8889</entry>
+<entry key="host">localhost</entry>
+<entry key="user">root</entry>
+</properties>

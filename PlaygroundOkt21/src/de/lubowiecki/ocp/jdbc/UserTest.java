@@ -3,6 +3,8 @@ package de.lubowiecki.ocp.jdbc;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import de.lubowiecki.orm.Mapper;
+
 public class UserTest {
 
 	public static void main(String[] args) {
@@ -42,7 +44,8 @@ public class UserTest {
 			
 		} 
 		catch (SQLException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

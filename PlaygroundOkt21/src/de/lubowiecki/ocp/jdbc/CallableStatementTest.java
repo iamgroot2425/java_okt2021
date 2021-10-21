@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import de.lubowiecki.orm.DatabaseUtils;
+
 public class CallableStatementTest {
 
 	public static void main(String[] args) {

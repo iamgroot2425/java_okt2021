@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
 
+import de.lubowiecki.orm.DatabaseUtils;
+
 public class TransactionTest {
 
 	public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package de.lubowiecki.ocp.jdbc;
 
+import de.lubowiecki.orm.AbstractEntity;
+
 public class User extends AbstractEntity {
 	
 	private String firstname;

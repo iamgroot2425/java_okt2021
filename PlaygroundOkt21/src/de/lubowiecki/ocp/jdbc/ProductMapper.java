@@ -3,6 +3,8 @@ package de.lubowiecki.ocp.jdbc;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import de.lubowiecki.orm.AbstractMapper;
+
 public class ProductMapper extends AbstractMapper<Product> {
 
 	public ProductMapper() {

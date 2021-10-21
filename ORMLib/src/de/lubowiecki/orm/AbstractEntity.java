@@ -1,4 +1,4 @@
-package de.lubowiecki.ocp.jdbc;
+package de.lubowiecki.orm;
 
 public abstract class AbstractEntity {
 
