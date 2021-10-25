@@ -12,11 +12,12 @@ import de.lubowiecki.orm.DatabaseUtils;
 public class ProductMapper extends AbstractMapper<Product> {
 
 	public ProductMapper() {
-		super("products");
+		super("products"); // Festlegung der DB-Table
 	}
 
 	@Override
 	protected Product create(ResultSet rs) throws SQLException {
+		// Wandelt SQL-Results in Objekte um
 		Product p = new Product();
 		p.setId(rs.getInt("id"));
 		p.setName(rs.getString("name"));
