@@ -1,7 +1,0 @@
--Dfile.encoding=UTF-8
--p
-/Users/tlubowiecki/git/java_okt2021/products/target/classes:/Users/tlubowiecki/Desktop/libs/ormlib.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-mac.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-mac.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-mac.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-mac.jar
--classpath
-/Users/tlubowiecki/.p2/pool/plugins/org.eclipse.fx.ide.css.jfx8_3.7.0.202010120832.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar:/Users/tlubowiecki/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar:/Users/tlubowiecki/.m2/repository/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar:/Users/tlubowiecki/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar
--m
-products/de.lubowiecki.products.App
