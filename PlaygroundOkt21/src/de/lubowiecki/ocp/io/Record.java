@@ -17,6 +17,9 @@ public class Record implements Serializable {
 	
 	private Status status;
 	
+	// transient Eigenschaften werden NICHT serialisiert
+	//private transient int number;
+	
 	public Record() {
 		createdAt = LocalDateTime.now();
 	}
