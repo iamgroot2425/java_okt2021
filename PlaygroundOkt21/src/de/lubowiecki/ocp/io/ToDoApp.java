@@ -1,5 +1,7 @@
 package de.lubowiecki.ocp.io;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -45,7 +47,7 @@ public class ToDoApp {
 	
 	private static List<Record> readFromFile() {
 		
-		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(SER_FILE))) {
+		try(ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(SER_FILE)))) {
 			return (List<Record>) in.readObject(); //Altdaten werden aus der Datei gelesen
 		}
 		catch (Exception e) {
@@ -56,7 +58,7 @@ public class ToDoApp {
 	
 	private static void writeToFile(List<Record> list) {
 		
-		try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(SER_FILE))) {
+		try(ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(SER_FILE)))) {
 			// Aktueller Zustand von todos wir in eine Datei gespeichert
 			out.writeObject(list);
 		}
