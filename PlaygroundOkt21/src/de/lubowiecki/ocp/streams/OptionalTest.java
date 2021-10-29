@@ -14,6 +14,14 @@ public class OptionalTest {
 		OptionalInt opt = search(new int[]{1,-2,3,-1,5,6,-7,8,-9,10}, z -> z > 9);
 		//System.out.println(opt.getAsInt()); // getAsInt zeigt den Wert im Optional
 		opt.ifPresent((i) -> System.out.println(i)); // Zeigt den wert aus den Optional, nur, wenn er da ist
+		
+		// TODO: Schreibe je 2 Implementierungen für
+		// Supplier
+		// Consumer
+		// Predicate
+		// Function
+		// UnaryOperator
+		
 	}
 	
 	// Liefert die position des gesuchten Wertes
