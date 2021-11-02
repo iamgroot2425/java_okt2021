@@ -1,7 +1,13 @@
 package de.lubowiecki.ocp.streams;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.OptionalInt;
 import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class OptionalTest {
 
@@ -22,6 +28,28 @@ public class OptionalTest {
 		// Function
 		// UnaryOperator
 		
+		// Array to Stream
+		int[] arr = new int[]{1,2,3,4,5,6,7,8,9,10};
+		IntStream iStream = Arrays.stream(arr);
+		
+		// Stream to Array
+		arr = iStream.filter(i -> i > 5).toArray();
+		
+		// Komplex
+		Integer[] integerArr = new Integer[]{1,2,3,4,5,6,7,8,9,10};
+		Stream<Integer> integerStream = Arrays.stream(integerArr);
+		
+		// Stream to Array
+		// toArray auf einem Objekt-Stream liefert per default ein Array von Object
+		Object[] objectArr = integerStream.filter(i -> i > 5).toArray();
+		
+		
+		try {
+			Stream<String> lines = Files.lines(Paths.get("test.txt"));
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// Liefert die position des gesuchten Wertes
