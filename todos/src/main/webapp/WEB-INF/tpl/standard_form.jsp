@@ -14,28 +14,22 @@
 	
 	<header class="container"></header>
 	
-	<nav class="container">
-		
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/open">Open</a></li>
-			<li><a href="/done">Done</a></li>
-			<li><a href="/all">All</a></li>
-		</ul>
-		
-	</nav>
+	<%@include file="main_nav.jsp" %>
 	
 	<main class="container">
 		<h1>${headline}</h1>
-		<form>
+		<form action="/save" method="post">
+		
+			<input type="hidden" name="id" id="id" value="${task.id}" />
+		
 			<div class="mb-3">
 				<label for="title" class="form-label">Titel</label>
-				<input type="text" name="title" id="title" class="form-control" />
+				<input type="text" name="title" id="title" class="form-control" value="${task.title}" />
 			</div>
 			
 			<div class="mb-3">
 				<label for="description" class="form-label">Beschreibung</label>
-				<textarea type="text" name="description" id="description" class="form-control"></textarea>
+				<textarea type="text" name="description" id="description" class="form-control">${task.description}</textarea>
 			</div>
 			
 			<button type="submit" class="btn btn-success">Speichern</button>

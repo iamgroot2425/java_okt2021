@@ -14,16 +14,7 @@
 	
 	<header class="container"></header>
 	
-	<nav class="container">
-		
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/open">Open</a></li>
-			<li><a href="/done">Done</a></li>
-			<li><a href="/all">All</a></li>
-		</ul>
-		
-	</nav>
+	<%@include file="main_nav.jsp" %>
 	
 	<main class="container">
 		<h1>${headline}</h1>
@@ -40,28 +31,30 @@
 					<tr>
 						<th>Titel</th>
 						<th>Beschreibung</th>
+						<th>&nbsp;</th>
 					</tr>
 					<c:forEach items="${tasks}" var="task">
 						<tr>
 							<td>${task.title}</td>
 							<td>${task.description}</td>
+							<td>
+								<a href="/delete/${task.id}" class="btn btn-danger">Löschen</a>
+								<a href="/edit/${task.id}" class="btn btn-warning">Bearbeiten</a>
+								
+								<c:if test="${task.isDone()}">
+									<a href="/undone/${task.id}" class="btn btn-info">Nicht Erledigt!</a>
+								</c:if>
+								
+								<c:if test="${!task.isDone()}">
+									<a href="/done/${task.id}" class="btn btn-success">Erledigt!</a>
+								</c:if>
+							</td>
 						<tr>
 					</c:forEach>
 				</table>
 			</c:otherwise>
 			
 			</c:choose>
-			
-			<%--
-			<c:forEach items="${tasks}" var="task">
-				<tr>
-					<td>${task.title}</td>
-					<td>${task.description}</td>
-				<tr>
-			</c:forEach>
-			--%>
-			
-		
 	</main>
 	
 	<footer class="container"></footer>
